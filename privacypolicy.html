@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Skeleton Warfare</title>
 
+    <meta name="robots" content="index, follow">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,41 +22,103 @@
             margin: auto;
         }
 
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            background: #020617;
-            padding: 20px;
-            border-radius: 10px;
+        h1, h2 {
+            color: #ffffff;
         }
 
         a {
             color: #38bdf8;
+        }
+
+        ul {
+            margin-left: 20px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Privacy Policy</h1>
-    <pre id="policy">Loading...</pre>
-</div>
 
-<script>
-fetch('PrivacyPolicy.txt')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('policy').textContent = data;
-    })
-    .catch(err => {
-        document.getElementById('policy').textContent = "Error loading privacy policy.";
-        console.error(err);
-    });
-</script>
+<h1>Privacy Policy</h1>
+
+<p>Thank you for playing our games! This Privacy Policy describes how we collect, use, and share your data.</p>
+
+<h2>Contact Us</h2>
+<p>
+Indie Soul Games<br>
+Hernandarias 3635, Buenos Aires, Argentina<br>
+Email: <a href="mailto:lucas.a.villalva@gmail.com">lucas.a.villalva@gmail.com</a>
+</p>
+
+<h2>Data We Collect</h2>
+
+<h3>Data you provide</h3>
+<ul>
+<li>Contact information (name, email)</li>
+<li>Messages and support requests</li>
+<li>Other data you provide voluntarily</li>
+</ul>
+
+<h3>Data collected automatically</h3>
+<ul>
+<li>Game progress and account data</li>
+<li>IP address and device identifiers</li>
+<li>Device information (OS, language, device type)</li>
+<li>Gameplay data and interactions</li>
+<li>General location data</li>
+</ul>
+
+<h3>Data from partners</h3>
+<ul>
+<li>Third-party account data (Google, Facebook)</li>
+<li>Fraud prevention data</li>
+<li>Payment verification data</li>
+<li>Advertising and analytics data</li>
+</ul>
+
+<h2>Why We Collect Data</h2>
+<ul>
+<li>To operate and maintain the game</li>
+<li>To improve user experience</li>
+<li>To provide support</li>
+<li>To personalize content and ads</li>
+<li>To prevent fraud and abuse</li>
+</ul>
+
+<h2>Third-Party Services</h2>
+<p>We may share data with trusted partners:</p>
+<ul>
+<li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a></li>
+<li><a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">Google Analytics</a></li>
+<li><a href="https://unity3d.com/legal/privacy-policy" target="_blank">Unity Ads</a></li>
+<li><a href="https://www.facebook.com/policy.php" target="_blank">Facebook</a></li>
+<li><a href="https://www.applovin.com/privacy/" target="_blank">AppLovin</a></li>
+</ul>
+
+<h2>International Data Transfers</h2>
+<p>Your data may be transferred and processed worldwide. We ensure appropriate safeguards are in place.</p>
+
+<h2>Your Rights</h2>
+<ul>
+<li>Access your data</li>
+<li>Request correction or deletion</li>
+<li>Opt-out of marketing</li>
+<li>Restrict data processing</li>
+</ul>
+
+<h2>Cookies</h2>
+<p>We use cookies and similar technologies to improve services and provide personalized ads.</p>
+
+<h2>Data Security</h2>
+<p>We implement technical and organizational measures to protect your data.</p>
+
+<h2>Data Retention</h2>
+<p>We retain your data as long as necessary to provide the service or comply with legal obligations.</p>
+
+<h2>Children's Privacy</h2>
+<p>We do not knowingly collect data from children under 13. If we discover such data, it will be deleted.</p>
+
+</div>
 
 </body>
 </html>
