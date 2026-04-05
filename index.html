@@ -1,127 +1,173 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Train-e</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skeleton Warfare</title>
+  <meta name="description" content="Lead your undead army in Skeleton Warfare. Build your forces, master your strategy, and dominate the battlefield." />
+  <meta property="og:title" content="Skeleton Warfare" />
+  <meta property="og:description" content="Build your army. Upgrade your strategy. Rule the battlefield." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">Skeleton Warfare</a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#download">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Strategy • Fantasy • Mobile</p>
+          <h1>Command an army of the undead.</h1>
+          <p class="lead">
+            Enter the battlefield in <strong>Skeleton Warfare</strong> and outsmart your enemies with ruthless tactics,
+            powerful units, and relentless skeletal warriors.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.indiesoulgames.skeletonwarfare" target="_blank" rel="noopener noreferrer">
+              Get it on Google Play
+            </a>
+            <a class="btn btn-secondary" href="#download">
+              View App Store link
+            </a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number">Undead</span>
+              <span class="stat-label">Army building</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">PvP</span>
+              <span class="stat-label">Strategic battles</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">Mobile</span>
+              <span class="stat-label">Play anywhere</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-card">
+          <div class="phone-shell">
+            <div class="screen">
+              <div class="screen-badge">Skeleton Warfare</div>
+              <div class="screen-title">Build. Deploy. Dominate.</div>
+              <div class="screen-battle">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+              <div class="screen-footer">
+                Tactical strategy with a dark fantasy vibe
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Train-e</div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why players join the war</p>
+          <h2>Designed for quick battles and deep strategy</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card">
+            <h3>Raise your army</h3>
+            <p>Recruit and organize skeletal units to create a force that matches your play style.</p>
+          </article>
+          <article class="card">
+            <h3>Master tactics</h3>
+            <p>Choose the right timing, positioning, and upgrades to outplay stronger opponents.</p>
+          </article>
+          <article class="card">
+            <h3>Upgrade your power</h3>
+            <p>Improve your troops and sharpen your strategy as battles become more intense.</p>
+          </article>
+          <article class="card">
+            <h3>Fight for supremacy</h3>
+            <p>Take on rivals in strategic showdowns and prove you are the ultimate commander.</p>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="container story-grid">
+        <div>
+          <p class="eyebrow">About the game</p>
+          <h2>Dark fantasy strategy made for mobile</h2>
+          <p>
+            Skeleton Warfare throws you into a world of relentless conflict, where your command decisions matter
+            as much as your army composition. Every battle is a chance to adapt, counter, and overwhelm the enemy.
+          </p>
+          <p>
+            This landing page is built as a clean one-page site, ideal for GitHub Pages. You can easily replace
+            the placeholder phone art with your own screenshots, trailer, or key art later.
+          </p>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote">
+            “Build your army, enhance your tactical skills, and dominate the battlefield.”
+          </p>
+          <p class="quote-note">Core store description inspiration</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="container download-box">
+        <p class="eyebrow">Download now</p>
+        <h2>Start your conquest</h2>
+        <p>
+          The Google Play link is already filled in. Replace the App Store link below with your exact Apple listing URL.
+        </p>
+
+        <div class="cta-row centered">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.indiesoulgames.skeletonwarfare" target="_blank" rel="noopener noreferrer">
+            Google Play
+          </a>
+          <a class="btn btn-secondary" href="https://apps.apple.com/" target="_blank" rel="noopener noreferrer">
+            Apple App Store
+          </a>
+        </div>
+
+        <p class="tiny-note">
+          Tip: open <code>index.html</code> and replace the App Store URL with your real iPhone/iPad listing before publishing.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Skeleton Warfare. All rights reserved.</p>
+      <p class="footer-links">
+        <a href="https://play.google.com/store/apps/details?id=com.indiesoulgames.skeletonwarfare" target="_blank" rel="noopener noreferrer">Google Play</a>
+        <a href="#top">Back to top</a>
+      </p>
     </div>
-    <script>
-      var canvas = document.querySelector("#unity-canvas");
+  </footer>
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
-
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/gladieweb.github.io.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/gladieweb.github.io.data",
-        frameworkUrl: buildUrl + "/gladieweb.github.io.framework.js",
-        codeUrl: buildUrl + "/gladieweb.github.io.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Train-e",
-        productVersion: "1.8",
-        showBanner: unityShowBanner,
-      };
-
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
-
-      document.querySelector("#unity-loading-bar").style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
-
-              }).catch((message) => {
-                alert(message);
-              });
-            };
-
-      document.body.appendChild(script);
-
-    </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
