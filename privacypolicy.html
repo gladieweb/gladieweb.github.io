@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Skeleton Warfare</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: #020617;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Privacy Policy</h1>
+    <pre id="policy">Loading...</pre>
+</div>
+
+<script>
+fetch('PrivacyPolicy.txt')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('policy').textContent = data;
+    })
+    .catch(err => {
+        document.getElementById('policy').textContent = "Error loading privacy policy.";
+        console.error(err);
+    });
+</script>
+
+</body>
+</html>
