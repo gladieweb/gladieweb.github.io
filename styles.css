@@ -334,6 +334,35 @@ h3 {
   align-items: stretch;
 }
 
+.deletion-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.deletion-steps {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.deletion-steps ol {
+  color: var(--muted);
+  line-height: 1.7;
+  padding-left: 20px;
+}
+
+.deletion-steps h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+}
+
+.deletion-steps li {
+  margin-bottom: 8px;
+}
+
 .quote-card {
   padding: 28px;
   display: flex;
@@ -386,6 +415,7 @@ h3 {
 @media (max-width: 900px) {
   .hero-grid,
   .story-grid,
+  .deletion-grid,
   .feature-grid {
     grid-template-columns: 1fr;
   }
