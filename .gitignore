@@ -1,0 +1,3 @@
+# Temporary preview logs and source retrieval; curated media live in content/.
+state/
+__pycache__/

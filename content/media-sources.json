@@ -1,0 +1,185 @@
+{
+  "source": "https://marvelous-blackbird-ddf.notion.site/Lucas-Villalva-Senior-Game-Developer-2187ed50e2b080508b5affe8f9f265b5",
+  "projects": [
+    {
+      "slug": "visage-ai",
+      "videos": [],
+      "links": []
+    },
+    {
+      "slug": "pagos-backend",
+      "videos": [],
+      "links": [
+        [
+          "Plugin publicado en Fab",
+          "https://fab.com/s/1d53ce3db697"
+        ]
+      ]
+    },
+    {
+      "slug": "herramientas-estudios",
+      "videos": [
+        [
+          "zMQiz6Zv-jI",
+          "Boop Kids — gameplay",
+          "Ernesto Escurra Sanz"
+        ],
+        [
+          "R0RjuvMz-Fs",
+          "Floyd’s Sticker Squad — gameplay",
+          "TapGameplay"
+        ],
+        [
+          "BZCppSvD9VM",
+          "Tower Power — gameplay",
+          "LemonChili Soft"
+        ]
+      ],
+      "links": []
+    },
+    {
+      "slug": "archviz",
+      "videos": [
+        [
+          "LutnL8qGrjw",
+          "Archviz 02 — recorrido",
+          "Lucas Villalva"
+        ]
+      ],
+      "links": []
+    },
+    {
+      "slug": "produccion-virtual",
+      "videos": [
+        [
+          "hHhe8Pj7_2k",
+          "Demostración de producción virtual",
+          "Hijo del Trueno"
+        ]
+      ],
+      "links": []
+    },
+    {
+      "slug": "vfx-niagara",
+      "videos": [
+        [
+          "jSBPGL-g0nw",
+          "Explosion VFX Niagara",
+          "Lucas Villalva"
+        ]
+      ],
+      "links": []
+    },
+    {
+      "slug": "skeleton-warfare",
+      "videos": [
+        [
+          "K8T9sPG7NbQ",
+          "Skeleton Warfare — versión de enero de 2022",
+          "Lucas Villalva"
+        ]
+      ],
+      "links": [
+        [
+          "Página del juego",
+          "../skeleton-warfare.html"
+        ],
+        [
+          "Google Play",
+          "https://play.google.com/store/apps/details?id=com.indiesoulgames.skeletonwarfare"
+        ]
+      ]
+    },
+    {
+      "slug": "cryptoys",
+      "videos": [
+        [
+          "A7ax7W8wjH0",
+          "Cryptoys — guía de la aplicación",
+          "Cryptoys"
+        ]
+      ],
+      "links": [
+        [
+          "Sitio de Cryptoys",
+          "https://cryptoys.com/"
+        ]
+      ]
+    },
+    {
+      "slug": "games-station",
+      "videos": [
+        [
+          "q9syOUlt24k",
+          "Game of Warriors — gameplay",
+          "Dragon Maniac"
+        ],
+        [
+          "kpl2-NypKVQ",
+          "Grow Empire: Rome — gameplay",
+          "Tapsuperstar"
+        ]
+      ],
+      "links": []
+    },
+    {
+      "slug": "netherak",
+      "videos": [
+        [
+          "YnCaIw7X_DE",
+          "Netherak Demons — teaser del juego",
+          "Juice Gaming News"
+        ]
+      ],
+      "links": [
+        [
+          "Ver en Epic Games Store",
+          "https://store.epicgames.com/es-ES/p/netherak-demons-a419cf"
+        ]
+      ]
+    },
+    {
+      "slug": "endless-runner",
+      "videos": [
+        [
+          "CU27-d8zarc",
+          "Endless Runner Tools — demostración del plugin",
+          "Lucas Villalva"
+        ]
+      ],
+      "links": [
+        [
+          "Ver plugin en Fab",
+          "https://fab.com/s/27062eb363fc"
+        ]
+      ]
+    },
+    {
+      "slug": "fps-ia",
+      "videos": [
+        [
+          "Acal2Dv7dfQ",
+          "FPS Mechanics — demostración",
+          "Lucas Villalva"
+        ]
+      ],
+      "links": [
+        [
+          "Código en GitHub",
+          "https://github.com/gladieweb/UnrealEngine_FPS-Blueprints-"
+        ]
+      ]
+    },
+    {
+      "slug": "supervivencia",
+      "videos": [
+        [
+          "ngBgNhtXkNk",
+          "Multiplayer Survival — sistema de recolección, enero de 2023",
+          "Lucas Villalva"
+        ]
+      ],
+      "links": []
+    }
+  ]
+}
