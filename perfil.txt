@@ -121,6 +121,12 @@ Fundamentos que también enseñé.
 Fui profesor de técnicas de inteligencia artificial para videojuegos. Los temas incluyeron máquinas de estados finitos (FSM), árboles de comportamiento, algoritmos genéticos, redes neuronales, pathfinding, flocking y steering behaviors.
 Una base para trabajar con equipos
 Esta experiencia docente complementa mi trabajo de programación y mis conocimientos de algoritmos y comportamiento de agentes.
+Narrativa & guion
+¿Tu proyecto también necesita una historia?
+Puedo colaborar en narrativa y guion para videojuegos, cinemáticas y animaciones: desarrollar una premisa, personajes, diálogos o el guion de una escena, según el alcance del proyecto.
+Ciel Cultivation History
+Estoy escribiendo Ciel Cultivation History, una novela ligera web de fantasía publicada bajo el nombre gladieweb. Es una obra personal en curso y una muestra de mi escritura creativa; la colaboración narrativa para juegos y producciones virtuales es un servicio que propongo a partir de esa práctica.
+Leer la novela en Webnovel ↗ (https://www.webnovel.com/book/24926796905300905)
 Capacidades / Para clientes & equipos técnicos
 La profundidad técnica, cuando la necesitás.
 Mi experiencia cubre distintas etapas del desarrollo. Explorá las capacidades relevantes para tu equipo o proyecto.

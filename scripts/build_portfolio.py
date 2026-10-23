@@ -4,7 +4,7 @@ from html import escape
 import json
 from localization import localize_pages
 from portfolio_updates import PROJECT_ADDITIONS, SCISOFT_JOB, SOFTWARE_EXPERIENCE, VISUAL_EXPERIENCE, CURRENT_PROFILE, ai_services, ai_navigation
-from positioning import EXTRA_PROJECTS, CAPABILITIES, CV_TEXT, CAPABILITY_NAV, capability_section, hiring_section, faq_section, teaching_section
+from positioning import EXTRA_PROJECTS, CAPABILITIES, CV_TEXT, CAPABILITY_NAV, capability_section, hiring_section, faq_section, teaching_section, narrative_section, narrative_offer
 from discovery import build_discovery
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -196,6 +196,8 @@ write('index.html', page('¿Qué necesitás?', 'Software, automatización, visua
 
 for area, data in AREAS.items():
     offers = ''.join(f'<article><span class="step">0{i+1}</span><h3>{escape(t)}</h3><p>{escape(d)}</p></article>' for i,(t,d) in enumerate(data['offers']))
+    if area in ('videojuegos', 'visualizacion'):
+        offers += narrative_offer()
     projects = [p for p in PROJECTS if p['area']==area]
     groups = ''
     if area == 'videojuegos':
@@ -211,9 +213,12 @@ for area, data in AREAS.items():
     if area == 'videojuegos':
         jump += '<div class="engine-nav"><span>Explorar por motor:</span><a href="#unity">Unity3D ↓</a><a href="#unreal">Unreal Engine ↓</a></div>'
     body = f'<div class="wrap">{breadcrumb(data["label"])}</div><section class="page-intro wrap"><p class="eyebrow">{data["label"]}</p><h1>{data["title"]}</h1><p class="lede">{data["intro"]}</p>{jump}</section><section class="section wrap" id="servicios"><div class="section-heading"><p class="eyebrow">Según lo que necesitás</p><h2>Cómo puedo ayudarte</h2></div><div class="offer-grid">{offers}</div></section><section class="section wrap" id="proyectos"><div class="section-heading"><p class="eyebrow">Trabajo en contexto</p><h2>Explorá los proyectos</h2><p>Abrí cada proyecto para conocer mi participación, las tecnologías y las demostraciones disponibles.</p></div>{groups}</section><section class="section wrap experience-panel" id="experiencia"><div><p class="eyebrow">Experiencia aplicada</p><h2>Detrás de cada proyecto.</h2><p>{data["experience"]}</p>{link("Conocer mi trayectoria", "perfil.html")}</div><div><h3>Herramientas &amp; habilidades</h3>{tags(data["skills"])}</div></section>{cta(area)}'
+    if area in ('videojuegos', 'visualizacion'):
+        body = body.replace('class="offer-grid"', 'class="offer-grid offer-grid-four"', 1)
     if area != 'videojuegos':
         body = body.replace('<section class="section wrap experience-panel"', '<div class="wrap">' + ai_services(area) + '</div><section class="section wrap experience-panel"', 1)
-    body = body.replace(cta(area), capability_section(area) + faq_section(area) + cta(area))
+    narrative = narrative_section() if area in ('videojuegos', 'visualizacion') else ''
+    body = body.replace(cta(area), narrative + capability_section(area) + faq_section(area) + cta(area))
     write(area+'.html', page(data['label'], data['intro'], body, active='servicios'))
 
 for p in PROJECTS:
@@ -244,7 +249,7 @@ timeline = ''.join(f'<article><span>{date}</span><div><h3>{company}</h3><p class
 profile = f'''<div class="wrap">{breadcrumb('Perfil / CV')}</div><section class="page-intro wrap"><p class="eyebrow">Perfil / CV</p><h1>Lucas Villalva</h1><p class="lede">Desarrollo software y experiencias interactivas. Mi trayectoria conecta programación, herramientas de producción y tecnología en tiempo real.</p><div class="profile-meta"><span>Buenos Aires, Argentina</span><span>Trabajo remoto · Freelance · Contratos</span></div><div class="resource-links">{link('GitHub', 'https://github.com/gladieweb', 'button secondary')}{link('Plugins en Fab', 'https://fab.com/sellers/Lucas%20Villalva', 'button secondary')}{link('CV original en Notion', NOTION, 'button secondary')}</div></section><section class="section wrap experience-panel"><div><p class="eyebrow">Sobre mi trabajo</p><h2>De los sistemas a la experiencia.</h2><p>Más de 13 años de experiencia en Unity3D y más de 4 con Unreal Engine. Me especializo en sistemas técnicos, gameplay, interfaces, plugins, integración de backend y herramientas para equipos.</p><p>También desarrollo soluciones en Python, integraciones con Node.js, análisis de datos e IA aplicada, además de visualización arquitectónica y producción virtual.</p></div><div><h3>Habilidades</h3>{tags(['TypeScript', 'Programación gráfica', 'MCP servers', 'Copilot', 'AI Skills', 'C#', 'C++', 'Blueprints', 'Python', 'Node.js', 'Unity3D', 'Unreal Engine', 'SQL', 'GraphQL', 'Git', 'Scrum / Agile', 'OOD / UML', 'Patrones de diseño', 'Optimización', 'Shaders / materiales'])}</div></section><section class="section wrap"><div class="section-heading"><p class="eyebrow">Trayectoria</p><h2>Experiencia profesional</h2></div><div class="timeline">{timeline}</div></section><section class="section wrap offer-grid"><article><p class="eyebrow">Formación</p><h3>Image Campus</h3><p>Técnico Superior en Desarrollo de Videojuegos (2009–2012).</p><h3>UADE</h3><p>Estudios en desarrollo de videojuegos (2022).</p></article><article><p class="eyebrow">Certificaciones</p><h3>Unreal Engine</h3><p>Unreal Engine 5 Blueprints — First Person Shooter (FPS).</p><p>Unreal Engine C++ Multiplayer Master.</p></article><article><p class="eyebrow">Idiomas</p><h3>Español &amp; inglés</h3><p>Español nativo.<br>Inglés intermedio / avanzado.</p></article></section>{cta()}'''
 profile = profile.replace('</div></section>', f'{link(CV_TEXT, "perfil.txt", "button secondary")}{link(CAPABILITY_NAV, "#capacidades", "button secondary")}</div></section>', 1)
 profile = profile.replace('<section class="section wrap experience-panel">', hiring_section() + CURRENT_PROFILE + '<section class="section wrap experience-panel">', 1)
-profile = profile.replace(cta(), teaching_section() + capability_section('perfil') + cta())
+profile = profile.replace(cta(), teaching_section() + narrative_section() + capability_section('perfil') + cta())
 write('perfil.html', page('Perfil & CV', 'Experiencia profesional, formación y habilidades de Lucas Villalva. Software, herramientas y experiencias interactivas.',profile,active='perfil'))
 
 contact = f'''<div class="wrap">{breadcrumb('Contacto')}</div><section class="page-intro wrap contact-intro"><p class="eyebrow">Empecemos por una conversación</p><h1>¿Qué tenés<br>en mente?</h1><p class="lede">Contame qué querés lograr y en qué punto estás. No hace falta tener una especificación técnica para empezar.</p><div class="contact-box"><span class="eyebrow">Escribime directamente</span><a class="contact-email" href="mailto:{EMAIL}">{EMAIL} <span aria-hidden="true">↗</span></a><p>Buenos Aires, Argentina · Colaboraciones remotas</p></div></section><section class="section wrap contact-details"><div><h2>Para arrancar, alcanza con esto.</h2><ol class="contact-prompts"><li>¿Qué necesitás resolver o construir?</li><li>¿Ya hay algo en marcha o empezamos desde cero?</li><li>¿Tenés algún plazo o alcance en mente?</li></ol></div><aside><p class="eyebrow">¿Estás armando un equipo?</p><p>También estoy disponible para propuestas freelance, contratos y posiciones remotas.</p>{link('Ver experiencia y CV', 'perfil.html')}<hr><p class="eyebrow">Soporte de Skeleton Warfare</p><p>Para privacidad o eliminación de datos del juego, usá las páginas específicas.</p>{link('Account deletion', 'account-deletion.html')}{link('Privacy Policy', 'privacypolicy.html')}</aside></section>'''

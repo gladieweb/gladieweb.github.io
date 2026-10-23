@@ -94,6 +94,22 @@ def capability_section(area):
         items += f'<details class="capability"><summary><strong>{g["title"]}</strong><span aria-hidden="true">+</span></summary><div class="capability-body"><p>{g["value"]}</p><ul class="tags">{pills}</ul></div></details>'
     return f'<section class="section wrap" id="capacidades"><div class="section-heading"><p class="eyebrow">{t("Capacidades / Para clientes & equipos técnicos", "Capabilities / For clients & technical teams")}</p><h2>{heading}</h2><p>{intro}</p></div><div class="capability-grid">{items}</div></section>'
 
+def narrative_offer():
+    t('04', '04')
+    title = t('Desarrollar una historia', 'Develop a story')
+    description = t('Narrativa, personajes, diálogos y guion para videojuegos, cinemáticas o animaciones.', 'Narrative, characters, dialogue, and scripts for games, cinematics, or animation.')
+    label = t('Ver muestra de escritura', 'View writing sample')
+    return f'<article><span class="step">04</span><h3>{title}</h3><p>{description}</p><a class="text-link" href="#narrativa">{label} ↗</a></article>'
+
+
+def narrative_section():
+    t('Ciel Cultivation History', 'Ciel Cultivation History')
+    title = t('¿Tu proyecto también necesita una historia?', 'Does your project also need a story?')
+    intro = t('Puedo colaborar en narrativa y guion para videojuegos, cinemáticas y animaciones: desarrollar una premisa, personajes, diálogos o el guion de una escena, según el alcance del proyecto.', 'I can collaborate on narrative and scripts for games, cinematics, and animation: developing a premise, characters, dialogue, or a scene script, depending on the project’s scope.')
+    sample = t('Estoy escribiendo Ciel Cultivation History, una novela ligera web de fantasía publicada bajo el nombre gladieweb. Es una obra personal en curso y una muestra de mi escritura creativa; la colaboración narrativa para juegos y producciones virtuales es un servicio que propongo a partir de esa práctica.', 'I am writing Ciel Cultivation History, a fantasy web light novel published under the name gladieweb. It is a personal work in progress and a sample of my creative writing; narrative collaboration for games and virtual productions is a service I offer based on that practice.')
+    return f'<section class="section wrap experience-panel" id="narrativa"><div><p class="eyebrow">{t("Narrativa & guion", "Narrative & scriptwriting")}</p><h2>{title}</h2><p>{intro}</p></div><div><h3>Ciel Cultivation History</h3><p>{sample}</p><a class="text-link" href="https://www.webnovel.com/book/24926796905300905" target="_blank" rel="noopener noreferrer">{t("Leer la novela en Webnovel", "Read the novel on Webnovel")} ↗</a></div></section>'
+
+
 def hiring_section():
     roles = [
         (t('Software & Graphics Developer', 'Software & Graphics Developer'),
