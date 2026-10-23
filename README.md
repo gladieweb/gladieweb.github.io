@@ -1,25 +1,11 @@
-# Skeleton Warfare GitHub Pages Site
+# Gladieweb — Lucas Villalva
 
-## Files
-- `index.html`
-- `styles.css`
-- `script.js`
+Portfolio estático para GitHub Pages, sin build ni dependencias.
 
-## Publish on GitHub Pages
-1. Create a new GitHub repository.
-2. Upload these 3 files to the repository root.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main` (root)
-5. Save.
-6. Your website will be published on your GitHub Pages URL.
+- index.html: portfolio y CV por áreas Unity3D, Unreal Engine y Software.
+- portfolio.css: diseño responsive del portfolio.
+- skeleton-warfare.html: página del juego con styles.css.
+- privacypolicy.html y account-deletion.html: páginas legales conservadas en sus rutas originales.
+- script.js: año del footer.
 
-## Important edit
-Before publishing, open `index.html` and replace the placeholder Apple App Store URL:
-
-```html
-https://apps.apple.com/
-```
-
-with your real iPhone/iPad app link.
+Contenido profesional basado en el portfolio público de Notion de Lucas. En Play Console mantener las URLs directas de las páginas legales. Los cambios locales no se publican hasta subirlos al repositorio.
