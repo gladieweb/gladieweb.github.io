@@ -22,6 +22,7 @@ Después de editarlo, ejecutar:
 ```powershell
 python scripts/build_portfolio.py
 python scripts/check_site.py
+python scripts/check_discovery.py
 node scripts/check_language.cjs
 ```
 
@@ -30,6 +31,35 @@ estilos originales. El contenido se basa en el portfolio de Notion facilitado po
 Lucas. content/media-sources.json conserva los enlaces originales de los 14 videos
 y los recursos de los proyectos. Los reproductores usan YouTube con carga diferida,
 sin reproducción automática, y ofrecen un enlace directo alternativo.
+
+Las actualizaciones profesionales facilitadas directamente por Lucas se mantienen
+en `scripts/portfolio_updates.py`, junto con sus traducciones. Incluyen SciSoft
+(desde febrero de 2026), Grafika, DrawMate, EasyViewDesigner2, Grafika MCP con
+Copilot, Skills para IA y proyectos personales de livestreaming con Python y Unreal.
+Los casos nuevos no incluyen videos o enlaces que Lucas aún no haya proporcionado.
+
+Los servicios emergentes se presentan en paneles desplegables, con ejemplos,
+primer entregable y aspectos a validar. Los pilotos de ACE, Agentic Gameplay,
+AI Coding Agents, AI Automated QA, RAG e inferencia local se distinguen de los
+proyectos realizados y no se agregan a la lista de experiencia acreditada.
+
+`scripts/positioning.py` agrupa las capacidades técnicas y las preguntas para
+clientes, y mantiene los casos de valoración de acciones con Python y Auto
+Landscape Material. El detalle financiero refleja un script implementado para
+integración futura, sin atribuirle una web terminada o resultados de inversión.
+
+## Descubrimiento en buscadores y asistentes
+
+`scripts/discovery.py` genera canónicas absolutas, alternates ES/EN/x-default,
+metadatos sociales y JSON-LD (Person, ProfilePage, WebSite, Service, CreativeWork
+y BreadcrumbList). Se utiliza la URL pública del repositorio:
+https://gladieweb.github.io/. Si cambia el dominio, actualizar esa constante.
+
+También genera sitemap.xml, robots.txt y CVs en texto (perfil.txt y en/perfil.txt).
+El marcado describe contenido visible; los pilotos futuros no figuran como
+experiencia de la persona ni como proyectos realizados. Las páginas legales
+existentes no se reescriben. Ver docs/search-visibility.md para publicación,
+verificación y medición. Estos cambios no garantizan indexación, citas ni ranking.
 
 ## Idiomas
 

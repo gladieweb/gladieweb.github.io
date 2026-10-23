@@ -68,4 +68,15 @@ for name in language_pages:
         assert 'data-language="es"' in content and 'data-language="en"' in content
 for name in ['privacypolicy.html', 'account-deletion.html', 'skeleton-warfare.html']:
     assert 'language.js' not in (ROOT / name).read_text(encoding='utf-8-sig'), 'Game/legal pages must not auto-redirect'
-print(f'PASS: {len(documents)} pages, links and anchors, 19 language pairs, 14 videos in both languages, legal pages unchanged.')
+for prefix, current_date, pilot in [('', 'Feb 2026 — Actualidad', 'Piloto a desarrollar'), ('en/', 'Feb 2026 — Present', 'Proposed pilot')]:
+    profile = (ROOT / prefix / 'perfil.html').read_text(encoding='utf-8')
+    assert current_date in profile and 'SciSoft' in profile
+    assert 'DrawMate' in profile and 'EasyViewDesigner2' in profile
+    for area in ['software', 'visualizacion', 'videojuegos']:
+        content = (ROOT / prefix / (area + '.html')).read_text(encoding='utf-8')
+        assert 'class="ai-offer"' in content and pilot in content
+    # Future technologies belong to proposals, not to completed projects or the skills list.
+    for slug in ['scisoft-grafika', 'grafika-mcp', 'streaming-interactivo']:
+        content = (ROOT / prefix / 'proyectos' / (slug + '.html')).read_text(encoding='utf-8')
+        assert 'NVIDIA ACE' not in content and 'Agentic Gameplay' not in content
+print(f'PASS: {len(documents)} pages, links and anchors, {len(language_pages)} language pairs, 14 videos, professional updates, scoped AI pilots, legal pages unchanged.')

@@ -3,13 +3,16 @@ from pathlib import Path
 from html import escape
 import json
 from localization import localize_pages
+from portfolio_updates import PROJECT_ADDITIONS, SCISOFT_JOB, SOFTWARE_EXPERIENCE, VISUAL_EXPERIENCE, CURRENT_PROFILE, ai_services, ai_navigation
+from positioning import EXTRA_PROJECTS, CAPABILITIES, CV_TEXT, CAPABILITY_NAV, capability_section, hiring_section, faq_section, teaching_section
+from discovery import build_discovery
 
 ROOT = Path(__file__).resolve().parent.parent
 NOTION = 'https://marvelous-blackbird-ddf.notion.site/Lucas-Villalva-Senior-Game-Developer-2187ed50e2b080508b5affe8f9f265b5'
 EMAIL = 'lucas.villalva@gmail.com'
 GENERATED_PAGES = []
 
-PROJECTS = [
+PROJECTS = PROJECT_ADDITIONS + EXTRA_PROJECTS + [
     dict(slug='visage-ai', area='software', title='Visage AI', category='Gestión & análisis de datos',
          summary='Inventario, ventas y datos de un comercio, reunidos en una misma herramienta.',
          context='Un sistema de gestión para pequeños y medianos comercios que combina operación diaria y análisis de información.',
@@ -107,13 +110,13 @@ AREAS = {
     'software': dict(title='Software para tu negocio.', label='Software & automatización',
         intro='Si necesitás ordenar información, conectar servicios o simplificar una tarea, podemos empezar por ahí.',
         offers=[('Organizar tu operación', 'Aplicaciones de gestión, inventario, ventas y dashboards para consultar la información que importa.'), ('Conectar tus herramientas', 'Integraciones de APIs, pagos y backend para que los sistemas puedan trabajar juntos.'), ('Reducir trabajo manual', 'Herramientas internas, automatización y soluciones de IA aplicadas a una necesidad concreta.')],
-        experience='En LemonChili Games desarrollé herramientas y backend compartidos entre proyectos. Como independiente, construí Visage AI e integraciones de pagos con Node.js y MercadoPago.',
-        skills=['Python', 'Node.js', 'SQL', 'Dash / Plotly', 'APIs', 'ONNX / PyTorch', 'OpenCV', 'Automatización']),
+        experience=SOFTWARE_EXPERIENCE,
+        skills=['TypeScript', 'Programación gráfica', 'MCP servers', 'Copilot', 'AI Skills', 'Python', 'Node.js', 'SQL', 'Dash / Plotly', 'APIs', 'ONNX / PyTorch', 'OpenCV', 'Automatización']),
     'visualizacion': dict(title='Tu idea, en un espacio que se puede explorar.', label='Visualización & experiencias 3D',
         intro='Para presentar un espacio, producir una escena o darle forma a una experiencia visual en tiempo real.',
         offers=[('Mostrar un espacio', 'Recorridos arquitectónicos con navegación, iluminación y materiales en tiempo real.'), ('Producir una escena', 'Integración de actuación, MetaHumans, cámara física y escenarios virtuales.'), ('Crear una experiencia visual', 'Efectos con Niagara, materiales e iluminación dentro de Unreal Engine.')],
-        experience='Trabajo con Unreal Engine en visualización arquitectónica y producción virtual: LiveLink, MetaHumans, integración de cámara, iluminación y materiales.',
-        skills=['Unreal Engine 5', 'Archviz', 'LiveLink', 'MetaHuman', 'Niagara', 'Lighting / LookDev', 'Materiales', 'Premiere Pro']),
+        experience=VISUAL_EXPERIENCE,
+        skills=['Unreal Engine 5', 'Python', 'Livestreaming', 'Interacciones de chat', 'Archviz', 'LiveLink', 'MetaHuman', 'Niagara', 'Lighting / LookDev', 'Materiales', 'Premiere Pro']),
     'videojuegos': dict(title='Llevemos tu juego al siguiente paso.', label='Desarrollo de videojuegos',
         intro='Para construir un prototipo, sumar sistemas a un proyecto o reforzar un equipo de desarrollo.',
         offers=[('Construir gameplay', 'Mecánicas, comportamiento de enemigos, inventarios y sistemas multijugador.'), ('Integrar y optimizar', 'UI, SDK, compras, backend y rendimiento para proyectos móviles, web y de escritorio.'), ('Sumar experiencia a tu equipo', 'Colaboración técnica, herramientas para producción y soporte de títulos publicados.')],
@@ -197,14 +200,20 @@ for area, data in AREAS.items():
     groups = ''
     if area == 'videojuegos':
         for engine in ['Unity3D', 'Unreal Engine']:
-            groups += f'<section class="project-group" id="{"unity" if engine == "Unity3D" else "unreal"}"><h3 class="group-title">{engine}</h3><div class="project-grid">' + ''.join(card(p) for p in projects if p['engine']==engine) + '</div></section>'
+            engine_key = 'unity' if engine == 'Unity3D' else 'unreal'
+            groups += f'<section class="project-group" id="{engine_key}"><h3 class="group-title">{engine}</h3><div class="project-grid">' + ''.join(card(p) for p in projects if p['engine']==engine) + '</div>' + ai_services(engine_key, level=4) + '</section>'
         groups += '<p class="related-note">También desarrollé herramientas y backend para LemonChili Games. <a href="proyectos/herramientas-estudios.html">Explorar ese trabajo ↗</a></p>'
     else:
         groups = '<div class="project-grid">' + ''.join(card(p) for p in projects) + '</div>'
     jump = '<nav class="section-nav" aria-label="En esta página"><a href="#servicios">Cómo puedo ayudarte</a><a href="#proyectos">Proyectos</a><a href="#experiencia">Experiencia &amp; habilidades</a></nav>'
+    jump = jump.replace('</nav>', ai_navigation(area) + '</nav>')
+    jump = jump.replace('</nav>', f'<a href="#capacidades">{CAPABILITY_NAV}</a></nav>')
     if area == 'videojuegos':
         jump += '<div class="engine-nav"><span>Explorar por motor:</span><a href="#unity">Unity3D ↓</a><a href="#unreal">Unreal Engine ↓</a></div>'
     body = f'<div class="wrap">{breadcrumb(data["label"])}</div><section class="page-intro wrap"><p class="eyebrow">{data["label"]}</p><h1>{data["title"]}</h1><p class="lede">{data["intro"]}</p>{jump}</section><section class="section wrap" id="servicios"><div class="section-heading"><p class="eyebrow">Según lo que necesitás</p><h2>Cómo puedo ayudarte</h2></div><div class="offer-grid">{offers}</div></section><section class="section wrap" id="proyectos"><div class="section-heading"><p class="eyebrow">Trabajo en contexto</p><h2>Explorá los proyectos</h2><p>Abrí cada proyecto para conocer mi participación, las tecnologías y las demostraciones disponibles.</p></div>{groups}</section><section class="section wrap experience-panel" id="experiencia"><div><p class="eyebrow">Experiencia aplicada</p><h2>Detrás de cada proyecto.</h2><p>{data["experience"]}</p>{link("Conocer mi trayectoria", "perfil.html")}</div><div><h3>Herramientas &amp; habilidades</h3>{tags(data["skills"])}</div></section>{cta(area)}'
+    if area != 'videojuegos':
+        body = body.replace('<section class="section wrap experience-panel"', '<div class="wrap">' + ai_services(area) + '</div><section class="section wrap experience-panel"', 1)
+    body = body.replace(cta(area), capability_section(area) + faq_section(area) + cta(area))
     write(area+'.html', page(data['label'], data['intro'], body, active='servicios'))
 
 for p in PROJECTS:
@@ -219,7 +228,7 @@ for p in PROJECTS:
     body = f'<div class="wrap"><nav class="breadcrumb" aria-label="Ruta de navegación"><a href="../index.html">Inicio</a><span>/</span><a href="../{area}.html">{AREAS[area]["label"]}</a><span>/</span><span>{escape(p["title"])}</span></nav></div><section class="page-intro wrap narrow"><p class="eyebrow">{escape(p["category"])}</p><h1>{escape(p["title"])}</h1><p class="lede">{escape(p["summary"])}</p>{links}</section><section class="section wrap narrow project-story"><div><p class="eyebrow">El contexto</p><h2>Qué se necesitaba</h2><p>{escape(p["context"])}</p></div><div><p class="eyebrow">Mi participación</p><h2>Qué desarrollé</h2><p>{escape(p["role"])}</p>{details}</div></section>{videos}<section class="section wrap narrow"><p class="eyebrow">Con qué trabajé</p><h2>Tecnologías &amp; habilidades</h2>{tags(p["skills"])}</section><div class="wrap narrow project-return">{link("Volver a "+AREAS[area]["label"], "../"+area+".html#proyectos")}</div>{cta(area, "../")}'
     write('proyectos/'+p['slug']+'.html', page(p['title'],p['summary'],body,depth=1))
 
-jobs = [
+jobs = [SCISOFT_JOB,
     ('2013 — Actualidad', 'Indie Soul Games', 'Independent Game Developer · Freelance', 'Desarrollo integral, LiveOps, consultoría en Unreal y producción virtual. Herramientas, gestión de stock y soluciones de IA.'),
     ('Ago — Nov 2025', 'Netherak Entertainment', 'Senior Unreal Engine Engineer', 'Sistemas UI, widgets UMG, materiales interactivos y shaders para un RPG multijugador.'),
     ('May — Ago 2025', 'Segritude Games', 'Senior Unreal Engine Developer', 'Implementación y depuración de multiplayer e IA en C++ para Lunaris.'),
@@ -232,7 +241,10 @@ jobs = [
     ('Ene — Mar 2014', 'Zupcat', 'Junior Game Developer', 'Desarrollo de mecánicas y niveles para juegos móviles con Unity3D.'),
 ]
 timeline = ''.join(f'<article><span>{date}</span><div><h3>{company}</h3><p class="job-role">{role}</p><p>{desc}</p></div></article>' for date,company,role,desc in jobs)
-profile = f'''<div class="wrap">{breadcrumb('Perfil / CV')}</div><section class="page-intro wrap"><p class="eyebrow">Perfil / CV</p><h1>Lucas Villalva</h1><p class="lede">Desarrollo software y experiencias interactivas. Mi trayectoria conecta programación, herramientas de producción y tecnología en tiempo real.</p><div class="profile-meta"><span>Buenos Aires, Argentina</span><span>Trabajo remoto · Freelance · Contratos</span></div><div class="resource-links">{link('GitHub', 'https://github.com/gladieweb', 'button secondary')}{link('Plugins en Fab', 'https://fab.com/sellers/Lucas%20Villalva', 'button secondary')}{link('CV original en Notion', NOTION, 'button secondary')}</div></section><section class="section wrap experience-panel"><div><p class="eyebrow">Sobre mi trabajo</p><h2>De los sistemas a la experiencia.</h2><p>Más de 13 años de experiencia en Unity3D y más de 4 con Unreal Engine. Me especializo en sistemas técnicos, gameplay, interfaces, plugins, integración de backend y herramientas para equipos.</p><p>También desarrollo soluciones en Python, integraciones con Node.js, análisis de datos e IA aplicada, además de visualización arquitectónica y producción virtual.</p></div><div><h3>Habilidades</h3>{tags(['C#', 'C++', 'Blueprints', 'Python', 'Node.js', 'Unity3D', 'Unreal Engine', 'SQL', 'GraphQL', 'Git', 'Scrum / Agile', 'OOD / UML', 'Patrones de diseño', 'Optimización', 'Shaders / materiales'])}</div></section><section class="section wrap"><div class="section-heading"><p class="eyebrow">Trayectoria</p><h2>Experiencia profesional</h2></div><div class="timeline">{timeline}</div></section><section class="section wrap offer-grid"><article><p class="eyebrow">Formación</p><h3>Image Campus</h3><p>Técnico Superior en Desarrollo de Videojuegos (2009–2012).</p><h3>UADE</h3><p>Estudios en desarrollo de videojuegos (2022).</p></article><article><p class="eyebrow">Certificaciones</p><h3>Unreal Engine</h3><p>Unreal Engine 5 Blueprints — First Person Shooter (FPS).</p><p>Unreal Engine C++ Multiplayer Master.</p></article><article><p class="eyebrow">Idiomas</p><h3>Español &amp; inglés</h3><p>Español nativo.<br>Inglés intermedio / avanzado.</p></article></section>{cta()}'''
+profile = f'''<div class="wrap">{breadcrumb('Perfil / CV')}</div><section class="page-intro wrap"><p class="eyebrow">Perfil / CV</p><h1>Lucas Villalva</h1><p class="lede">Desarrollo software y experiencias interactivas. Mi trayectoria conecta programación, herramientas de producción y tecnología en tiempo real.</p><div class="profile-meta"><span>Buenos Aires, Argentina</span><span>Trabajo remoto · Freelance · Contratos</span></div><div class="resource-links">{link('GitHub', 'https://github.com/gladieweb', 'button secondary')}{link('Plugins en Fab', 'https://fab.com/sellers/Lucas%20Villalva', 'button secondary')}{link('CV original en Notion', NOTION, 'button secondary')}</div></section><section class="section wrap experience-panel"><div><p class="eyebrow">Sobre mi trabajo</p><h2>De los sistemas a la experiencia.</h2><p>Más de 13 años de experiencia en Unity3D y más de 4 con Unreal Engine. Me especializo en sistemas técnicos, gameplay, interfaces, plugins, integración de backend y herramientas para equipos.</p><p>También desarrollo soluciones en Python, integraciones con Node.js, análisis de datos e IA aplicada, además de visualización arquitectónica y producción virtual.</p></div><div><h3>Habilidades</h3>{tags(['TypeScript', 'Programación gráfica', 'MCP servers', 'Copilot', 'AI Skills', 'C#', 'C++', 'Blueprints', 'Python', 'Node.js', 'Unity3D', 'Unreal Engine', 'SQL', 'GraphQL', 'Git', 'Scrum / Agile', 'OOD / UML', 'Patrones de diseño', 'Optimización', 'Shaders / materiales'])}</div></section><section class="section wrap"><div class="section-heading"><p class="eyebrow">Trayectoria</p><h2>Experiencia profesional</h2></div><div class="timeline">{timeline}</div></section><section class="section wrap offer-grid"><article><p class="eyebrow">Formación</p><h3>Image Campus</h3><p>Técnico Superior en Desarrollo de Videojuegos (2009–2012).</p><h3>UADE</h3><p>Estudios en desarrollo de videojuegos (2022).</p></article><article><p class="eyebrow">Certificaciones</p><h3>Unreal Engine</h3><p>Unreal Engine 5 Blueprints — First Person Shooter (FPS).</p><p>Unreal Engine C++ Multiplayer Master.</p></article><article><p class="eyebrow">Idiomas</p><h3>Español &amp; inglés</h3><p>Español nativo.<br>Inglés intermedio / avanzado.</p></article></section>{cta()}'''
+profile = profile.replace('</div></section>', f'{link(CV_TEXT, "perfil.txt", "button secondary")}{link(CAPABILITY_NAV, "#capacidades", "button secondary")}</div></section>', 1)
+profile = profile.replace('<section class="section wrap experience-panel">', hiring_section() + CURRENT_PROFILE + '<section class="section wrap experience-panel">', 1)
+profile = profile.replace(cta(), teaching_section() + capability_section('perfil') + cta())
 write('perfil.html', page('Perfil & CV', 'Experiencia profesional, formación y habilidades de Lucas Villalva. Software, herramientas y experiencias interactivas.',profile,active='perfil'))
 
 contact = f'''<div class="wrap">{breadcrumb('Contacto')}</div><section class="page-intro wrap contact-intro"><p class="eyebrow">Empecemos por una conversación</p><h1>¿Qué tenés<br>en mente?</h1><p class="lede">Contame qué querés lograr y en qué punto estás. No hace falta tener una especificación técnica para empezar.</p><div class="contact-box"><span class="eyebrow">Escribime directamente</span><a class="contact-email" href="mailto:{EMAIL}">{EMAIL} <span aria-hidden="true">↗</span></a><p>Buenos Aires, Argentina · Colaboraciones remotas</p></div></section><section class="section wrap contact-details"><div><h2>Para arrancar, alcanza con esto.</h2><ol class="contact-prompts"><li>¿Qué necesitás resolver o construir?</li><li>¿Ya hay algo en marcha o empezamos desde cero?</li><li>¿Tenés algún plazo o alcance en mente?</li></ol></div><aside><p class="eyebrow">¿Estás armando un equipo?</p><p>También estoy disponible para propuestas freelance, contratos y posiciones remotas.</p>{link('Ver experiencia y CV', 'perfil.html')}<hr><p class="eyebrow">Soporte de Skeleton Warfare</p><p>Para privacidad o eliminación de datos del juego, usá las páginas específicas.</p>{link('Account deletion', 'account-deletion.html')}{link('Privacy Policy', 'privacypolicy.html')}</aside></section>'''
@@ -241,4 +253,5 @@ write('contacto.html', page('Conversemos', 'Contame qué necesitás resolver: de
 # Keep a small, auditable record of the original media, without signed or expiring URLs.
 write('content/media-sources.json', json.dumps({'source':NOTION,'projects':[{k:p[k] for k in ['slug','videos','links']} for p in PROJECTS]},ensure_ascii=False,indent=2)+'\n')
 localize_pages(ROOT, GENERATED_PAGES)
+build_discovery(ROOT, GENERATED_PAGES, PROJECTS, AREAS, CAPABILITIES)
 print(f'Generated {len(GENERATED_PAGES)} pages in Spanish and English.')

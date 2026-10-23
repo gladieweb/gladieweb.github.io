@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 import posixpath
 import json
+from portfolio_updates import EN_UPDATES
 
 EN = {
     '2013 — Actualidad': '2013 — Present',
@@ -294,9 +295,11 @@ def translate(text):
     clean = text.strip()
     if not clean:
         return text
-    if clean in EN:
+    if clean in EN_UPDATES:
+        result = EN_UPDATES[clean]
+    elif clean in EN:
         result = EN[clean]
-    elif clean in IDENTITY or clean.startswith('Video: '):
+    elif clean in IDENTITY or clean == '+' or clean.startswith('Video: '):
         result = clean
     elif clean.endswith(' — Lucas Villalva'):
         result = translate(clean.removesuffix(' — Lucas Villalva')) + ' — Lucas Villalva'
@@ -304,6 +307,8 @@ def translate(text):
         result = 'View project: ' + translate(clean.removeprefix('Ver proyecto: '))
     elif clean.startswith('Volver a '):
         result = 'Back to ' + translate(clean.removeprefix('Volver a '))
+    elif clean.endswith(' ↗'):
+        result = translate(clean.removesuffix(' ↗')) + ' ↗'
     else:
         raise ValueError(f'Missing English translation: {clean!r}')
     return text[:len(text)-len(text.lstrip())] + result + text[len(text.rstrip()):]
@@ -334,7 +339,7 @@ class EnglishPage(HTMLParser):
         if url.scheme or url.netloc or not url.path:
             return value
         original_target = posixpath.normpath(posixpath.join(posixpath.dirname(self.name), url.path))
-        target = 'en/' + original_target if original_target in self.pages else original_target
+        target = 'en/' + original_target if original_target in self.pages or original_target == 'perfil.txt' else original_target
         relative = posixpath.relpath(target, posixpath.dirname('en/' + self.name))
         return urlunsplit(('', '', relative, url.query, url.fragment))
 
@@ -367,7 +372,7 @@ def language_navigation(content, name, lang):
     content = content.replace('<!--language-switch-->', selector)
     # Run before rendering to avoid showing the wrong language briefly.
     content = content.replace('  <meta name="viewport"', f'  <script src="{script}?v=1"></script>\n  <link rel="alternate" hreflang="es" href="{es}">\n  <link rel="alternate" hreflang="en" href="{en}">\n  <meta name="viewport"', 1)
-    return content.replace('portfolio.css?v=2', 'portfolio.css?v=3')
+    return content.replace('portfolio.css?v=2', 'portfolio.css?v=5')
 
 def localize_pages(root, names):
     for name in names:

@@ -1,0 +1,225 @@
+Lucas Villalva
+lucas.villalva@gmail.com
+https://gladieweb.github.io/perfil.html
+
+Inicio
+/ Perfil / CV
+Perfil / CV
+Lucas Villalva
+Desarrollo software y experiencias interactivas. Mi trayectoria conecta programación, herramientas de producción y tecnología en tiempo real.
+Buenos Aires, Argentina Trabajo remoto · Freelance · Contratos
+GitHub ↗ (https://github.com/gladieweb)
+Plugins en Fab ↗ (https://fab.com/sellers/Lucas%20Villalva)
+CV original en Notion ↗ (https://marvelous-blackbird-ddf.notion.site/Lucas-Villalva-Senior-Game-Developer-2187ed50e2b080508b5affe8f9f265b5)
+CV en texto ↗
+Capacidades técnicas ↗
+Contratación / Colaboración
+Qué puedo aportar a tu equipo.
+Trabajo por proyecto y considero propuestas de contratación remota. Acordamos disponibilidad, responsabilidad y alcance según la necesidad.
+Software & Graphics Developer
+TypeScript, Python, librerías gráficas e integración de asistentes mediante MCP y Skills. Experiencia actual en SciSoft y aplicaciones propias, con base en matemáticas 3D y álgebra lineal.
+Ver experiencia relacionada ↗
+Senior Unity & Unreal Developer
+Más de 13 años con Unity3D y más de 4 con Unreal Engine. Gameplay, física de videojuegos, arquitectura, herramientas, UI, multiplayer e integraciones móviles.
+Ver experiencia relacionada ↗
+Real-time 3D Developer
+Archviz, shaders, materiales, iluminación y producción virtual. Experiencias de livestreaming con Python y Unreal Engine.
+Ver experiencia relacionada ↗
+Actualmente / SciSoft
+Programación gráfica e integración de IA.
+Desde febrero de 2026 trabajo en SciSoft en programación gráfica con TypeScript: Grafika, DrawMate y EasyViewDesigner2. También desarrollé un servidor MCP de Grafika integrado con Copilot y Skills para IA.
+Conocer el trabajo en Grafika ↗
+Trabajo realizado con IA
+MCP servers, Skills e integración con Copilot para dar contexto de código a los asistentes. En proyectos personales, Python y Unreal Engine conectan el chat del livestream con escenas 2D y 3D.
+Ver el servidor MCP de Grafika ↗
+Sobre mi trabajo
+De los sistemas a la experiencia.
+Más de 13 años de experiencia en Unity3D y más de 4 con Unreal Engine. Me especializo en sistemas técnicos, gameplay, interfaces, plugins, integración de backend y herramientas para equipos.
+También desarrollo soluciones en Python, integraciones con Node.js, análisis de datos e IA aplicada, además de visualización arquitectónica y producción virtual.
+Habilidades
+TypeScript
+Programación gráfica
+MCP servers
+Copilot
+AI Skills
+C#
+C++
+Blueprints
+Python
+Node.js
+Unity3D
+Unreal Engine
+SQL
+GraphQL
+Git
+Scrum / Agile
+OOD / UML
+Patrones de diseño
+Optimización
+Shaders / materiales
+Trayectoria
+Experiencia profesional
+Feb 2026 — Actualidad
+SciSoft
+Programador gráfico · TypeScript
+Desarrollo de Grafika para aplicaciones de diseño de corte. Participación en DrawMate y EasyViewDesigner2. Servidor MCP para conectar el código de Grafika con Copilot desde las aplicaciones que la implementan.
+2013 — Actualidad
+Indie Soul Games
+Independent Game Developer · Freelance
+Desarrollo integral, LiveOps, consultoría en Unreal y producción virtual. Herramientas, gestión de stock y soluciones de IA.
+Ago — Nov 2025
+Netherak Entertainment
+Senior Unreal Engine Engineer
+Sistemas UI, widgets UMG, materiales interactivos y shaders para un RPG multijugador.
+May — Ago 2025
+Segritude Games
+Senior Unreal Engine Developer
+Implementación y depuración de multiplayer e IA en C++ para Lunaris.
+Ago 2024 — May 2025
+Cominted Labs
+Technical Lead Developer
+Proyectos Unity3D para WebGL y móviles, coordinación con clientes y equipos, investigación y optimización.
+Ago 2023 — Jul 2024
+TECLA
+Senior Unity3D Developer
+Aplicación móvil, C#, integración con GraphQL, UI Toolkit y visual scripting.
+Ago 2020 — Sep 2022
+Games Station
+Senior Unity3D Developer
+Gameplay, nuevas funcionalidades y optimización de rendimiento.
+Oct 2019 — Sep 2020
+LemonChili Games
+Senior Tools Programmer
+Herramientas y pipelines para arte y diseño. Automatización con Python, Bash y scripts batch.
+May 2014 — Ene 2019
+QB9 Entertainment
+Unity3D Game Developer
+Desarrollo de funcionalidades y contenido para juegos móviles y web.
+Sep — Oct 2014
+Image Campus
+Instructor de IA en videojuegos
+Curso intensivo de pathfinding, toma de decisiones y comportamientos procedurales.
+Ene — Mar 2014
+Zupcat
+Junior Game Developer
+Desarrollo de mecánicas y niveles para juegos móviles con Unity3D.
+Formación
+Image Campus
+Técnico Superior en Desarrollo de Videojuegos (2009–2012).
+UADE
+Estudios en desarrollo de videojuegos (2022).
+Certificaciones
+Unreal Engine
+Unreal Engine 5 Blueprints — First Person Shooter (FPS).
+Unreal Engine C++ Multiplayer Master.
+Idiomas
+Español & inglés
+Español nativo.
+Inglés intermedio / avanzado.
+Docencia / IA para videojuegos
+Fundamentos que también enseñé.
+Fui profesor de técnicas de inteligencia artificial para videojuegos. Los temas incluyeron máquinas de estados finitos (FSM), árboles de comportamiento, algoritmos genéticos, redes neuronales, pathfinding, flocking y steering behaviors.
+Una base para trabajar con equipos
+Esta experiencia docente complementa mi trabajo de programación y mis conocimientos de algoritmos y comportamiento de agentes.
+Capacidades / Para clientes & equipos técnicos
+La profundidad técnica, cuando la necesitás.
+Mi experiencia cubre distintas etapas del desarrollo. Explorá las capacidades relevantes para tu equipo o proyecto.
+Software, gráficos & contexto para IA +
+Desarrollo de aplicaciones, librerías compartidas e integraciones que conectan asistentes con el código del producto.
+TypeScript
+Python
+JavaScript / Node.js
+SQL
+GraphQL
+Programación gráfica
+MCP servers
+Copilot
+AI Skills
+Matemáticas 3D, álgebra & física de videojuegos +
+Sólidos fundamentos matemáticos y físicos para razonar sobre movimiento, relaciones espaciales y sistemas de gameplay y gráficos.
+Matemáticas 3D (3D math)
+Álgebra lineal (Linear algebra)
+Física para videojuegos
+Programación de shaders & optimización visual +
+Experiencia escribiendo vertex y fragment shaders en Cg para Unity. Evaluación del coste matemático, la precisión necesaria y el resultado visual al plantear simplificaciones y aproximaciones en shaders.
+Programación manual de shaders
+Vertex shaders
+Fragment shaders
+Cg (Unity)
+Optimización de shaders
+Precisión numérica & calidad visual
+Arquitectura & diseño de software +
+Sistemas que se pueden extender, mantener y adaptar a las reglas del proyecto.
+Programación orientada a objetos (OOP)
+Arquitectura orientada a componentes
+Data-driven development
+Principios SOLID
+Design Patterns
+Algoritmos & resolución de problemas +
+Fundamentos para resolver problemas de búsqueda, selección y optimización según las necesidades del sistema.
+Búsqueda binaria
+Problema de la mochila (Knapsack)
+Algoritmos genéticos + redes neuronales
+Unity / C# & herramientas de producción +
+Gameplay, interfaces y herramientas para que el equipo pueda iterar sobre un proyecto.
+Unity3D
+C#
+ScriptableObjects
+Editor tools
+SDK
+UI Toolkit
+Gameplay
+Data-driven development
+Unreal / gameplay, animación & multiplayer +
+Sistemas de juego, habilidades, animación y sincronización para experiencias interactivas.
+Unreal Engine
+C++
+Blueprints
+Gameplay Ability System (GAS)
+Animation Blueprints
+Replication
+Multiplayer
+UI / UMG
+IA de gameplay, decisiones & movimiento +
+Experiencia con técnicas de navegación, toma de decisiones y comportamiento de agentes, también como docente de IA para videojuegos.
+Pathfinding A*
+Máquinas de estados finitos (FSM)
+Behavior Trees
+Flocking
+Steering Behaviors
+Materiales, iluminación & producción en tiempo real +
+Presentación visual de espacios, personajes y escenas, con interacción 2D y 3D.
+Lighting
+Materials
+Shaders
+Auto Landscape Material
+Niagara
+LiveLink
+MetaHuman
+Archviz
+Livestreaming
+Fundamentos de motores & rendering +
+Desarrollé un motor propio con fixed-function pipeline como proyecto histórico. Esa experiencia forma parte de mis fundamentos de motores y gráficos; mi trabajo actual está descrito en los proyectos de software, Unity y Unreal.
+Motor propio / Proyecto histórico
+Fixed-function pipeline / Histórico
+Fundamentos de rendering
+Integraciones, monetización & analítica +
+Conectar los servicios que acompañan la operación y el seguimiento de una aplicación o un juego.
+Firebase
+In-app purchases (IAP)
+AppsFlyer
+Ads SDKs
+Analytics
+LiveOps
+Integraciones API
+Rendimiento & entornos de desarrollo móvil +
+Diagnóstico de rendimiento y trabajo con las herramientas del ciclo de desarrollo móvil.
+Profiling
+Optimización
+Xcode
+Android Studio
+Git
+El siguiente paso
+Contame qué necesitás resolver.
+Podés venir con una idea, un proyecto en marcha o una pregunta.
+Conversemos ↗

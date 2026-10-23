@@ -1,0 +1,225 @@
+Lucas Villalva
+lucas.villalva@gmail.com
+https://gladieweb.github.io/en/perfil.html
+
+Home
+/ Profile / resume
+Profile / resume
+Lucas Villalva
+I develop software and interactive experiences. My background brings together programming, production tools, and real-time technology.
+Buenos Aires, Argentina Remote work · Freelance · Contracts
+GitHub ↗ (https://github.com/gladieweb)
+Plugins on Fab ↗ (https://fab.com/sellers/Lucas%20Villalva)
+Original resume on Notion ↗ (https://marvelous-blackbird-ddf.notion.site/Lucas-Villalva-Senior-Game-Developer-2187ed50e2b080508b5affe8f9f265b5)
+Plain-text resume ↗
+Technical capabilities ↗
+Hiring / Collaboration
+What I can bring to your team.
+I work on projects and consider remote employment opportunities. We agree on availability, responsibility, and scope based on your needs.
+Software & Graphics Developer
+TypeScript, Python, graphics libraries, and assistant integration through MCP and Skills. Current experience at SciSoft and independently developed applications, grounded in 3D math and linear algebra.
+View related experience ↗
+Senior Unity & Unreal Developer
+Over 13 years with Unity3D and more than 4 with Unreal Engine. Gameplay, game physics, architecture, tools, UI, multiplayer, and mobile integrations.
+View related experience ↗
+Real-time 3D Developer
+Archviz, shaders, materials, lighting, and virtual production. Livestreaming experiences with Python and Unreal Engine.
+View related experience ↗
+Currently / SciSoft
+Graphics programming and AI integration.
+Since February 2026, I have worked at SciSoft on graphics programming with TypeScript: Grafika, DrawMate, and EasyViewDesigner2. I also developed a Grafika MCP server integrated with Copilot and AI Skills.
+Explore the Grafika work ↗
+Hands-on AI work
+MCP servers, Skills, and Copilot integration to give assistants code context. In personal projects, Python and Unreal Engine connect livestream chat to 2D and 3D scenes.
+Explore the Grafika MCP server ↗
+About my work
+From systems to experiences.
+Over 13 years of experience with Unity3D and more than 4 with Unreal Engine. I specialize in technical systems, gameplay, interfaces, plugins, backend integration, and tools for teams.
+I also develop Python solutions, Node.js integrations, data analytics, and applied AI, as well as architectural visualization and virtual production.
+Skills
+TypeScript
+Graphics programming
+MCP servers
+Copilot
+AI Skills
+C#
+C++
+Blueprints
+Python
+Node.js
+Unity3D
+Unreal Engine
+SQL
+GraphQL
+Git
+Scrum / Agile
+OOD / UML
+Design patterns
+Optimization
+Shaders / materials
+Background
+Professional experience
+Feb 2026 — Present
+SciSoft
+Graphics Programmer · TypeScript
+Grafika development for cutting design applications. Contributions to DrawMate and EasyViewDesigner2. An MCP server connecting Grafika’s code to Copilot from applications using the library.
+2013 — Present
+Indie Soul Games
+Independent Game Developer · Freelance
+End-to-end development, LiveOps, Unreal consulting, and virtual production. Tools, inventory management, and AI solutions.
+Aug — Nov 2025
+Netherak Entertainment
+Senior Unreal Engine Engineer
+UI systems, UMG widgets, interactive materials, and shaders for a multiplayer RPG.
+May — Aug 2025
+Segritude Games
+Senior Unreal Engine Developer
+Multiplayer and AI implementation and debugging in C++ for Lunaris.
+Aug 2024 — May 2025
+Cominted Labs
+Technical Lead Developer
+Unity3D projects for WebGL and mobile, client and team coordination, research, and optimization.
+Aug 2023 — Jul 2024
+TECLA
+Senior Unity3D Developer
+Mobile application development, C#, GraphQL integration, UI Toolkit, and visual scripting.
+Aug 2020 — Sep 2022
+Games Station
+Senior Unity3D Developer
+Gameplay, new features, and performance optimization.
+Oct 2019 — Sep 2020
+LemonChili Games
+Senior Tools Programmer
+Tools and pipelines for art and design. Automation with Python, Bash, and batch scripts.
+May 2014 — Jan 2019
+QB9 Entertainment
+Unity3D Game Developer
+Feature and content development for mobile and web games.
+Sep — Oct 2014
+Image Campus
+Game AI Instructor
+An intensive course on pathfinding, decision-making, and procedural behaviors.
+Jan — Mar 2014
+Zupcat
+Junior Game Developer
+Mechanics and level development for mobile games in Unity3D.
+Education
+Image Campus
+Higher Technical Degree in Game Development (2009–2012).
+UADE
+Coursework in game development (2022).
+Certifications
+Unreal Engine
+Unreal Engine 5 Blueprints — First Person Shooter (FPS).
+Unreal Engine C++ Multiplayer Master.
+Languages
+Spanish & English
+Native Spanish.
+Intermediate / advanced English.
+Teaching / Game AI
+Foundations I have also taught.
+I taught artificial intelligence techniques for games. Topics included finite state machines (FSM), behavior trees, genetic algorithms, neural networks, pathfinding, flocking, and steering behaviors.
+A foundation for working with teams
+This teaching experience complements my programming work and my knowledge of algorithms and agent behavior.
+Capabilities / For clients & technical teams
+Technical depth, when you need it.
+My experience spans different stages of development. Explore the capabilities relevant to your team or project.
+Software, graphics & context for AI +
+Applications, shared libraries, and integrations that connect assistants to product code.
+TypeScript
+Python
+JavaScript / Node.js
+SQL
+GraphQL
+Graphics programming
+MCP servers
+Copilot
+AI Skills
+3D math, linear algebra & game physics +
+Strong mathematical and physics foundations for reasoning about motion, spatial relationships, and gameplay and graphics systems.
+3D math
+Linear algebra
+Game physics
+Shader programming & visual optimization +
+Experience writing vertex and fragment shaders in Cg for Unity. Evaluating mathematical cost, required precision, and visual results when considering shader simplifications and approximations.
+Handwritten shader programming
+Vertex shaders
+Fragment shaders
+Cg (Unity)
+Shader optimization
+Numerical precision & visual quality
+Software architecture & design +
+Systems that can be extended, maintained, and adapted to the project’s rules.
+Object-oriented programming (OOP)
+Component-based architecture
+Data-driven development
+SOLID principles
+Design Patterns
+Algorithms & problem solving +
+Foundations for solving search, selection, and optimization problems according to the system’s needs.
+Binary search
+Knapsack problem
+Genetic algorithms + neural networks
+Unity / C# & production tools +
+Gameplay, interfaces, and tools that help a team iterate on a project.
+Unity3D
+C#
+ScriptableObjects
+Editor tools
+SDK
+UI Toolkit
+Gameplay
+Data-driven development
+Unreal / gameplay, animation & multiplayer +
+Gameplay, abilities, animation, and synchronization systems for interactive experiences.
+Unreal Engine
+C++
+Blueprints
+Gameplay Ability System (GAS)
+Animation Blueprints
+Replication
+Multiplayer
+UI / UMG
+Gameplay AI, decision-making & movement +
+Experience with navigation, decision-making, and agent behavior techniques, including teaching game AI.
+A* pathfinding
+Finite State Machines (FSM)
+Behavior Trees
+Flocking
+Steering Behaviors
+Materials, lighting & real-time production +
+Visual presentation of spaces, characters, and scenes, with 2D and 3D interaction.
+Lighting
+Materials
+Shaders
+Auto Landscape Material
+Niagara
+LiveLink
+MetaHuman
+Archviz
+Livestreaming
+Engine & rendering foundations +
+I developed a custom engine using a fixed-function pipeline as a historical project. That experience is part of my engine and graphics foundations; my current work is described in the software, Unity, and Unreal projects.
+Custom engine / Historical project
+Fixed-function pipeline / Historical
+Rendering foundations
+Integrations, monetization & analytics +
+Connecting the services that support application or game operations and measurement.
+Firebase
+In-app purchases (IAP)
+AppsFlyer
+Ads SDKs
+Analytics
+LiveOps
+API integrations
+Performance & mobile development environments +
+Performance diagnosis and work with the tools used throughout mobile development.
+Profiling
+Optimization
+Xcode
+Android Studio
+Git
+The next step
+Tell me what you need to solve.
+Bring an idea, a project in progress, or a question.
+Let’s talk ↗
