@@ -27,6 +27,8 @@ class Document(HTMLParser):
             assert a.get('title'), f'{self.path}: iframe without title'
             self.videos.append(a.get('src', ''))
             assert a.get('loading') == 'lazy', f'{self.path}: video must load lazily'
+        if tag == 'html':
+            self.lang = a.get('lang')
 
 documents = {p.resolve(): Document(p) for p in ROOT.glob('**/*.html') if '.git' not in p.parts}
 for path, doc in documents.items():
@@ -54,4 +56,16 @@ for name in ['privacypolicy.html', 'account-deletion.html', 'PrivacyPolicy.txt',
 
 home = (ROOT / 'index.html').read_text(encoding='utf-8')
 assert 'class="timeline"' not in home and 'class="project-grid"' not in home, 'Home should remain concise'
-print(f'PASS: {len(documents)} pages, all local links and anchors, 14 videos, legal pages unchanged.')
+language_pages = json.loads((ROOT / 'content/language-pages.json').read_text(encoding='utf-8'))
+for name in language_pages:
+    es, en = ROOT / name, ROOT / 'en' / name
+    assert documents[es.resolve()].lang == 'es'
+    assert documents[en.resolve()].lang == 'en'
+    assert documents[es.resolve()].videos == documents[en.resolve()].videos, f'{name}: video mismatch'
+    for path in [es, en]:
+        content = path.read_text(encoding='utf-8')
+        assert 'hreflang="es"' in content and 'hreflang="en"' in content
+        assert 'data-language="es"' in content and 'data-language="en"' in content
+for name in ['privacypolicy.html', 'account-deletion.html', 'skeleton-warfare.html']:
+    assert 'language.js' not in (ROOT / name).read_text(encoding='utf-8-sig'), 'Game/legal pages must not auto-redirect'
+print(f'PASS: {len(documents)} pages, links and anchors, 19 language pairs, 14 videos in both languages, legal pages unchanged.')

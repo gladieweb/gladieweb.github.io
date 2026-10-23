@@ -2,10 +2,12 @@
 from pathlib import Path
 from html import escape
 import json
+from localization import localize_pages
 
 ROOT = Path(__file__).resolve().parent.parent
 NOTION = 'https://marvelous-blackbird-ddf.notion.site/Lucas-Villalva-Senior-Game-Developer-2187ed50e2b080508b5affe8f9f265b5'
 EMAIL = 'lucas.villalva@gmail.com'
+GENERATED_PAGES = []
 
 PROJECTS = [
     dict(slug='visage-ai', area='software', title='Visage AI', category='Gestión & análisis de datos',
@@ -128,6 +130,8 @@ def tags(items):
 
 def page(title, desc, body, depth=0, active='', home=False):
     prefix = '../' * depth
+    # Keep words separated when a responsive breakpoint hides a line break.
+    body = body.replace('<br>', '<br> ')
     nav = ''.join(f'<a href="{prefix}{url}"' + (' aria-current="page"' if key == active else '') + f'>{label}</a>' for key,url,label in [('servicios','index.html#caminos','Qué necesitás'),('perfil','perfil.html','Perfil / CV'),('contacto','contacto.html','Conversemos')])
     return f'''<!DOCTYPE html>
 <html lang="es">
@@ -146,11 +150,11 @@ def page(title, desc, body, depth=0, active='', home=False):
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <header class="site-header wrap">
     <a class="identity" href="{prefix}index.html" aria-label="Lucas Villalva, inicio"><span class="monogram" aria-hidden="true">lv<span>·</span></span><span>Lucas Villalva<small>Desarrollo &amp; experiencias digitales</small></span></a>
-    <nav aria-label="Principal">{nav}</nav>
+    <div class="header-tools"><nav aria-label="Principal">{nav}</nav><!--language-switch--></div>
   </header>
   <main id="contenido">{body}</main>
   <footer class="site-footer"><div class="wrap footer-row"><span>© <span id="year">2026</span> Lucas Villalva <span class="footer-brand">/ gladieweb</span></span><nav class="legal" aria-label="Skeleton Warfare: información legal"><span>Skeleton Warfare</span><a href="{prefix}skeleton-warfare.html">Juego</a><a href="{prefix}privacypolicy.html">Privacy Policy</a><a href="{prefix}account-deletion.html">Account deletion</a></nav></div></footer>
-  <script src="{prefix}script.js?v=2"></script>
+  <script src="{prefix}script.js?v=3"></script>
 </body>
 </html>
 '''
@@ -159,6 +163,8 @@ def write(name, content):
     target = ROOT / name
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(content, encoding='utf-8')
+    if name.endswith('.html'):
+        GENERATED_PAGES.append(name)
 
 def breadcrumb(label, depth=0):
     return f'<nav class="breadcrumb" aria-label="Ruta de navegación"><a href="{"../" * depth}index.html">Inicio</a><span aria-hidden="true">/</span><span>{escape(label)}</span></nav>'
@@ -234,4 +240,5 @@ write('contacto.html', page('Conversemos', 'Contame qué necesitás resolver: de
 
 # Keep a small, auditable record of the original media, without signed or expiring URLs.
 write('content/media-sources.json', json.dumps({'source':NOTION,'projects':[{k:p[k] for k in ['slug','videos','links']} for p in PROJECTS]},ensure_ascii=False,indent=2)+'\n')
-print(f'Generated {len(PROJECTS)+6} static pages.')
+localize_pages(ROOT, GENERATED_PAGES)
+print(f'Generated {len(GENERATED_PAGES)} pages in Spanish and English.')

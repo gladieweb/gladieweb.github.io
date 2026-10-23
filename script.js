@@ -16,7 +16,13 @@ if (document.body.classList.contains("home")) {
   };
   const followLegacyLink = () => {
     const destination = legacyDestinations[window.location.hash];
-    if (destination) window.location.replace(destination);
+    if (destination) {
+      const isGamePage = /^(account-deletion|skeleton-warfare)\.html/.test(destination);
+      const base = isGamePage && document.documentElement.dataset.languageEs
+        ? new URL(document.documentElement.dataset.languageEs, window.location.href)
+        : window.location.href;
+      window.location.replace(new URL(destination, base).href);
+    }
   };
   followLegacyLink();
   window.addEventListener("hashchange", followLegacyLink);

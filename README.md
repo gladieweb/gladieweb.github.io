@@ -22,6 +22,7 @@ Después de editarlo, ejecutar:
 ```powershell
 python scripts/build_portfolio.py
 python scripts/check_site.py
+node scripts/check_language.cjs
 ```
 
 Los estilos están en portfolio.css. El juego y las páginas legales conservan sus
@@ -29,6 +30,22 @@ estilos originales. El contenido se basa en el portfolio de Notion facilitado po
 Lucas. content/media-sources.json conserva los enlaces originales de los 14 videos
 y los recursos de los proyectos. Los reproductores usan YouTube con carga diferida,
 sin reproducción automática, y ofrecen un enlace directo alternativo.
+
+## Idiomas
+
+El portfolio tiene versiones estáticas en español (rutas originales) e inglés
+(`en/`, con las mismas subpáginas). Las traducciones se mantienen en
+`scripts/localization.py`; el generador falla si falta traducir contenido nuevo.
+
+`language.js` detecta el idioma principal del navegador: `es` y sus variantes
+usan español; cualquier otro idioma o un valor desconocido usa inglés. El
+selector ES / EN conserva la página y sección actuales y guarda la elección
+manual en localStorage. Si el almacenamiento está bloqueado, la elección se
+mantiene mediante `?lang=es` o `?lang=en` durante la navegación. Los enlaces
+directos a `en/` siempre permiten compartir la versión inglesa.
+
+Las páginas legales y la landing de Skeleton Warfare mantienen sus URLs y su
+contenido original en inglés, sin detección ni redirección de idioma.
 
 ## URLs legales de Google Play
 
