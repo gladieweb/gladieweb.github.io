@@ -124,7 +124,7 @@ def build_discovery(root, names, projects, areas, capabilities):
         # A straightforward format for recruiters, ATS tools and text-only readers.
         parser = MainText()
         parser.feed((root / ('' if lang == 'es' else 'en') / 'perfil.html').read_text(encoding='utf-8'))
-        resume = 'Lucas Villalva\nlucas.villalva@gmail.com\n' + profile_url + '\n\n' + parser.text()
+        resume = 'Lucas Villalva\nlucas.a.villalva@gmail.com\n' + profile_url + '\n\n' + parser.text()
         (root / ('' if lang == 'es' else 'en') / 'perfil.txt').write_text(resume, encoding='utf-8')
 
     ns = 'http://www.sitemaps.org/schemas/sitemap/0.9'

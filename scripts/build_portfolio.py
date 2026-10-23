@@ -9,7 +9,7 @@ from discovery import build_discovery
 
 ROOT = Path(__file__).resolve().parent.parent
 NOTION = 'https://marvelous-blackbird-ddf.notion.site/Lucas-Villalva-Senior-Game-Developer-2187ed50e2b080508b5affe8f9f265b5'
-EMAIL = 'lucas.villalva@gmail.com'
+EMAIL = 'lucas.a.villalva@gmail.com'
 GENERATED_PAGES = []
 
 PROJECTS = PROJECT_ADDITIONS + EXTRA_PROJECTS + [

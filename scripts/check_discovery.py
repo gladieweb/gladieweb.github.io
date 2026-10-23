@@ -66,7 +66,7 @@ for name in PAGES:
             assert any('Linear algebra' in skill for skill in person['knowsAbout'])
             assert not any(term in ' '.join(person['knowsAbout']) for term in ['NVIDIA ACE', 'Agentic Gameplay', 'RAG'])
             text = (ROOT / prefix / 'perfil.txt').read_text(encoding='utf-8')
-            assert 'lucas.villalva@gmail.com' in text and 'SciSoft' in text and 'AppsFlyer' in text
+            assert 'lucas.a.villalva@gmail.com' in text and 'SciSoft' in text and 'AppsFlyer' in text
             assert '<script' not in text and 'schema.org' not in text
         if name.endswith('valoracion-acciones-python.html'):
             assert 'Yahoo Finance' in html and 'AAPL' in html and 'Python' in html
