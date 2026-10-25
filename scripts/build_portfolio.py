@@ -147,7 +147,7 @@ def page(title, desc, body, depth=0, active='', home=False):
   <meta property="og:description" content="{escape(desc, quote=True)}">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#f4f3ed">
-  <link rel="stylesheet" href="{prefix}portfolio.css?v=2">
+  <link rel="stylesheet" href="{prefix}portfolio.css?v=3">
 </head>
 <body{' class="home"' if home else ''}>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -156,7 +156,7 @@ def page(title, desc, body, depth=0, active='', home=False):
     <div class="header-tools"><nav aria-label="Principal">{nav}</nav><!--language-switch--></div>
   </header>
   <main id="contenido">{body}</main>
-  <footer class="site-footer"><div class="wrap footer-row"><span>© <span id="year">2026</span> Lucas Villalva <span class="footer-brand">/ gladieweb</span></span><nav class="legal" aria-label="Skeleton Warfare: información legal"><span>Skeleton Warfare</span><a href="{prefix}skeleton-warfare.html">Juego</a><a href="{prefix}privacypolicy.html">Privacy Policy</a><a href="{prefix}account-deletion.html">Account deletion</a></nav></div></footer>
+  <footer class="site-footer"><div class="wrap footer-row"><span>© <span id="year">2026</span> Lucas Villalva <span class="footer-brand">/ gladieweb</span></span><nav class="legal" aria-label="Skeleton Warfare: información legal"><span class="footer-game"><img src="https://play-lh.googleusercontent.com/zenlzx3hUY0SVZNkaDU-XrAai2GWuq0mDERjUK0ORmKj1lZagBSRkRGLigysOBBISw=w96-h96" alt="" width="28" height="28" loading="lazy">Skeleton Warfare</span><a href="{prefix}skeleton-warfare.html">Juego</a><a href="{prefix}privacypolicy.html">Privacy Policy</a><a href="{prefix}account-deletion.html">Account deletion</a></nav></div></footer>
   <script src="{prefix}script.js?v=3"></script>
 </body>
 </html>
